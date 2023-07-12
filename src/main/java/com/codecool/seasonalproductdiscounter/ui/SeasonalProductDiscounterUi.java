@@ -8,6 +8,7 @@ import com.codecool.seasonalproductdiscounter.service.products.ProductProvider;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -34,8 +35,8 @@ public class SeasonalProductDiscounterUi {
         printPromotions();
 
         System.out.println("Enter a date to see which products are discounted on that date:");
-        LocalDate date = getDate();
-        System.out.println();
+        Date date = new Date();
+        System.out.println(date);
 
         printOffers(date);
     }
@@ -50,7 +51,7 @@ public class SeasonalProductDiscounterUi {
     private void printPromotions() {
     }
 
-    private void printOffers(LocalDate date) {
+    private void printOffers(Date date) {
     }
 
     private List<Offer> getOffers(LocalDate date) {

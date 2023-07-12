@@ -22,9 +22,19 @@ public enum Season {
 
     public boolean contains(LocalDate date)
     {
+    Month month = date.getMonth();
+    return months.contains(month);
     }
 
     public Season shift(int amount) {
+    Season[] seasons = Season.values();
+    int currentIndex = this.ordinal();
+    int shiftedIndex = (currentIndex + amount) % seasons.length;
+    if (shiftedIndex < 0){
+        shiftedIndex += seasons.length;
     }
+    return seasons[shiftedIndex];
+    }
+
 
 }
